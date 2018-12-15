@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div>
+		<app-section
+			v-for="section in sections"
+			v-bind:key="section.id"
+			v-bind:section="section"
+		>
+		</app-section>
+	</div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Section from "@/components/Section";
 
 export default {
-  name: "home",
   components: {
-    HelloWorld
+    "app-section": Section
+  },
+  data() {
+    return {
+      sections: this.$store.state.sections
+    };
   }
 };
 </script>
