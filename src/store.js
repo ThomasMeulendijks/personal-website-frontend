@@ -5,9 +5,12 @@ Vue.use(Vuex);
 
 import axios from "axios";
 
+const HTTP = axios.create({
+  baseURL: ""
+});
+
 export default new Vuex.Store({
   state: {
-    test: "init",
     sections: [
       {
         id: 1,
@@ -70,23 +73,15 @@ export default new Vuex.Store({
   mutations: {
     updateSections(state, payload) {
       state.sections = payload;
-    },
-    updateTest(state, payload) {
-      state.test = payload;
-      console.log(payload);
-      console.log(state.test);
     }
   },
   actions: {
-    refreshTest(context) {
+    refreshSections(context) {
       return new Promise(resolve => {
-        axios
-          .get("https://petstore.swagger.io/v2/store/inventory")
-          .then(response => {
-            console.log(response.data);
-            context.commit("updateTest", response.data);
-            resolve();
-          });
+        HTTP.get("").then(response => {
+          context.commit("updateSection", response.data);
+          resolve();
+        });
       });
     }
   }

@@ -1,23 +1,12 @@
 <template>
 	<div id="app">
-		<h1>{{ test }}</h1>
 		<router-view/>
-<input id="clickMe" type="button" value="clickme" v-on:click="refreshTest();" />
 	</div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      test: this.$store.state.test
-    };
-  },
-  methods: {
-    refreshTest() {
-      this.$store.dispatch("refreshTest").then(() => {
-        this.test = this.$store.state.test;
-      });
-    }
+  created() {
+    this.$store.dispatch("refreshSections");
   }
 };
 </script>
