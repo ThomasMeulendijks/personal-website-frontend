@@ -23,6 +23,7 @@ export default {
 </script>
 <style lang="scss">
 .category {
+	width: 100%;
 }
 .item-container {
   width: 100%;

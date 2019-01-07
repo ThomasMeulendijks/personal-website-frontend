@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<router-view/>
+		<router-view class="router"/>
 	</div>
 </template>
 <script>
@@ -13,11 +13,11 @@ export default {
 
 <style lang="scss">
 #app {
+  flex-wrap: wrap;
   width: 60%;
   margin: auto;
   display: flex;
   padding: 10px;
-  flex-warp: warp;
 
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,5 +30,9 @@ export default {
       color: #42b983;
     }
   }
+}
+.router{
+width:100%;
+height:100%;
 }
 </style>
