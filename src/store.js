@@ -5,22 +5,22 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		sections: [{
+		Categories: [{
 			id: 1,
 			name:"Loading...",
-			Links:[],
+			Items:[],
 		}],
 	},
 	mutations: {
-		updateSections(state, payload) {
-			state.sections = payload;
+		updateCategories(state, payload) {
+			state.Categories = payload;
 		}
 	},
 	actions: {
-		refreshSections(context) {
+		refreshCategories(context) {
 			PageService.get("Home")
 				.then(response => {
-					context.commit("updateSections", response.Sections);
+					context.commit("updateCategories", response.Categories);
 				});
 		}
 	}

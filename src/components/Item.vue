@@ -1,15 +1,15 @@
 <template>
-	<router-link :to="tile.url" class="tile">
-		<h3> {{ tile.name}} </h3>
+	<router-link :to="item.link" class="item">
+		<h3> {{ item.name}} </h3>
 	</router-link>
 </template>
 <script>
 export default {
-  props: ["tile"]
+	props: ["item"]
 };
 </script>
 <style lang="scss">
-.tile {
+.item {
   height: 100px;
   width: 100px;
   float: left;

@@ -5,9 +5,9 @@
 </template>
 <script>
 export default {
-  created() {
-    this.$store.dispatch("refreshSections");
-  }
+	created() {
+		this.$store.dispatch("refreshCategories");
+	}
 };
 </script>
 

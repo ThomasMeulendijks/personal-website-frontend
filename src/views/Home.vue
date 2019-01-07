@@ -1,23 +1,23 @@
 <template>
 	<div>
-		<app-section
-			v-for="section in sections"
-			v-bind:key="section.id"
-			v-bind:section="section"
+		<app-category
+			v-for="category in categories"
+			v-bind:key="category.id"
+			v-bind:category="category"
 		>
-		</app-section>
+		</app-category>
 	</div>
 </template>
 <script>
-import Section from "@/components/Section";
+import Category from "@/components/Category";
 
 export default {
-  components: {
-    "app-section": Section
-  },
+	components: {
+		"app-category": Category
+	},
 	computed: {
-		sections(){
-			return this.$store.state.sections
+		categories(){
+			return this.$store.state.Categories
 		},
 	},
 };
