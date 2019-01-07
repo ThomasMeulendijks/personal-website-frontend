@@ -15,10 +15,10 @@ export default {
   components: {
     "app-section": Section
   },
-  data() {
-    return {
-      sections: this.$store.state.sections
-    };
-  }
+	computed: {
+		sections(){
+			return this.$store.state.sections
+		},
+	},
 };
 </script>

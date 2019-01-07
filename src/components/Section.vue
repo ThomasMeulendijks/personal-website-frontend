@@ -1,14 +1,14 @@
 <template>
 	<div class="section">
-		<h1> {{ section.title }} </h1>
+		<h1> {{ section.name }} </h1>
 		<hr>
 		<div class="tile-container">
-		<app-tile
-			v-for="tile in section.tiles"
-   v-bind:key="tile.id"
-   v-bind:tile="tile"
-   ></app-tile>
-	</div>
+			<app-tile
+		 v-for="link in section.Links"
+	 v-bind:key="link.id"
+	 v-bind:tile="link"
+	 ></app-tile>
+		</div>
 	</div>
 </template>
 <script>

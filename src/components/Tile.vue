@@ -1,6 +1,6 @@
 <template>
-	<router-link :to="tile.route" class="tile">
-		<h3> {{ tile.title }} </h3>
+	<router-link :to="tile.url" class="tile">
+		<h3> {{ tile.name}} </h3>
 	</router-link>
 </template>
 <script>
