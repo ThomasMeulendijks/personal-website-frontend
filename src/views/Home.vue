@@ -2,10 +2,9 @@
 	<div>
 		<app-category
 			v-for="category in categories"
-			v-bind:key="category.id"
-			v-bind:category="category"
-		>
-		</app-category>
+			:key="category.id"
+			:category="category"
+		/>
 	</div>
 </template>
 <script>
@@ -16,11 +15,10 @@ export default {
 		"app-category": Category
 	},
 	computed: {
-		categories(){
-			return this.$store.state.Categories
-		},
-	},
+		categories() {
+			return this.$store.state.Categories;
+		}
+	}
 };
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

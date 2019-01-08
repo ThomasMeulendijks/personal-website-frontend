@@ -12,10 +12,10 @@ export default new Router({
 			name: "home",
 			component: Home
 		},
-	 {
-		 path: "*",
-		 name: "404",
-		 component: () => import("./views/404.vue"),
-	  },
+		{
+			path: "*",
+			name: "404",
+			component: () => import("./views/404.vue")
+		}
 	]
 });

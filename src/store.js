@@ -5,11 +5,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		Categories: [{
-			id: 1,
-			name:"Loading...",
-			Items:[],
-		}],
+		Categories: [
+			{
+				id: 1,
+				name: "Loading...",
+				Items: []
+			}
+		]
 	},
 	mutations: {
 		updateCategories(state, payload) {
@@ -18,10 +20,9 @@ export default new Vuex.Store({
 	},
 	actions: {
 		refreshCategories(context) {
-			PageService.get("Home")
-				.then(response => {
-					context.commit("updateCategories", response.Categories);
-				});
+			PageService.get("Home").then(response => {
+				context.commit("updateCategories", response.Categories);
+			});
 		}
 	}
 });
